@@ -1,0 +1,93 @@
+<div *ngIf="!user">
+
+    <app-not-found [errTitle]="'You are not logged in'" [errMsg]="'You Have to be logged in to see your orders'"
+        [btnText]="'LOG IN'" [path]="'/auth'">
+    </app-not-found>
+    <!-- <h2 style="text-align: center;">You Have to be logged in to see your orders</h2> -->
+</div>
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="large" color="#fff" type="triangle-skew-spin" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+
+<div *ngIf="orders && orders.length===0">
+    <app-not-found [errTitle]="'404 Not Found'" [errMsg]="'You dont have any orders'" [btnText]="'BACK TO PRODUCTS'"
+        [path]="'/home'">
+    </app-not-found>
+</div>
+
+<div class="container" *ngIf="orders && orders.length !== 0">
+    <h1 class="ordersHeading">Your Orders</h1>
+
+    <div class="ordersShow" style="display: flex; flex-wrap: wrap;
+    flex-direction: row;">
+
+        <div class="card mb-3" style="max-width: 540px;" *ngFor="let order of orders">
+            <div class="row g-0">
+                <div>
+                    <div class="card-body">
+                        <h2 class="card-title">Order number {{order.id}}</h2>
+                        <p class="card-text">{{order.price}} &euro;</p>
+                        <p class="card-text">{{order.address}}</p>
+                        <p class="card-text"><small class="text-muted">Shipped {{order.order_date}}</small></p>
+
+                        <p class="card-text btnDel"><button (click)="delete(order.id!)" class="btn btn-outline-success">
+                                Confirm
+                                order arival </button></p>
+                        <p class="card-text btnDel"><button (click)="delete(order.id!)" class="btn btn-outline-danger">
+                                Cancel order </button></p>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row g-0">
+                <div>
+
+                    <div class="list-group w-auto">
+                        <div class="list-group-item d-flex gap-3 py-3" aria-current="true"
+                            *ngFor="let guitar of order.guitars">
+                            <img src="{{guitar.image}}" alt="twbs" width="100" height="100"
+                                class="rounded mx-auto d-block">
+                            <div class="d-flex gap-2 w-100 justify-content-between">
+                                <div>
+                                    <h3 class="mb-0">{{ guitar.model + ' ' + guitar.release_year}}</h3>
+                                    <p class="mb-0 opacity-100">{{guitar.description}}</p>
+
+                                    <p class="card-text btnReview"><button (click)="openReview(guitar, content)"
+                                            class="btn btn-outline-success"> Tell
+                                            us
+                                            what you think </button>
+                                    </p>
+
+                                </div>
+                                <small class="opacity-100 text-nowrap"
+                                    style="padding: 60px 0;font-size: 18px;">{{guitar.price}}&euro;</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <ng-template #content let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title">Tell us how you feel!</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <app-review [user]="user" [guitar]="guitarForReview" (postAdded)="modal.close()"></app-review>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+        </div>
+    </ng-template>
+
+
+</div>

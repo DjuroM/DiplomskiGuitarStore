@@ -1,0 +1,90 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="large" color="#fff" type="triangle-skew-spin" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<div class="container shadow-lg" *ngIf="guitar">
+    <div class="row">
+        <h2 class="guitarHeading"> {{guitar.brand['name'] + ' '+ guitar.model + ' ' +guitar.release_year}}</h2>
+    </div>
+    <div class="row">
+        <img src="{{guitar.image}}" alt="slika" class="img-responsive top">
+
+    </div>
+
+    <div class="row audio">
+        <div class="col select">
+            <label for="samples" class="sampleLabel">Choose a sample</label>
+            <select name="samples" [(ngModel)]="selectedSample" class="form-select sampleSelect">
+                <option value="../assets/LoFiZaCola.mp3">Lofi</option>
+                <option value="../assets/FunkZaColu.mp3">Funk</option>
+                <option value="LofiZaCola.mp3">Lofi</option>
+                <option value="LofiZaCola.mp3">Lofi</option>
+                <option value="LofiZaCola.mp3">Lofi</option>
+            </select>
+        </div>
+        <div class="col">
+            <audio src={{selectedSample}} controls id="audioPlayer"></audio>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-7">
+            <div class="row">
+                <div class="col list">
+                    <ul>
+                        <li> {{guitar.description}} </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col list">
+                    <ul>
+                        <li> Guitar type: {{guitar.guitar_type['type']}} </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col list">
+                    <ul>
+                        <li> Pickups: {{guitar.pickups['pickup_description']}}
+                            (<b>{{guitar.pickups['pickup_combination']}}</b>) </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col list">
+                    <ul>
+                        <li> Release Year: {{guitar.release_year}} </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-5" style="
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        flex-direction: column; ">
+            <a (click)="onAddToBasket()" class="shopButton">
+                Add to basket
+            </a>
+
+            <div class="row">
+                <p style="
+                display: inherit;
+                align-items: center;
+                justify-content: start;
+                font-size: 25px;
+                margin: 10px;
+                ">{{guitar.price}} <span class="material-symbols-outlined" style="font-family:'Material Icons' ;">
+                        euro_symbol
+                    </span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row reviewRow" style="margin-bottom: 20px; padding-bottom: 14px;">
+        <app-reviews></app-reviews>
+    </div>
+
+
+</div>

@@ -1,0 +1,29 @@
+.error{
+
+    color: red;
+
+}
+
+
+.container {
+    background-color: antiquewhite;
+    border-left: 10px saddlebrown solid;
+}
+
+.form {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+    height: 100px;
+    margin-top: 15px;
+}
+
+.post {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}

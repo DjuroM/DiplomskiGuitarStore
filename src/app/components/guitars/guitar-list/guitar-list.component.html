@@ -1,0 +1,80 @@
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Fillter</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+
+        <label for="#selectBrand">Brand</label>
+        <select id="selectBrand" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+            [(ngModel)]="selectedBrand">
+            <option value="none">None</option>
+            <option value="1">Fender</option>
+            <option value="4">Ibanez</option>
+            <option value="9">PRS</option>
+            <option value="10">Epiphone</option>
+            <option value="12">Squire</option>
+            <option value="13">Gibson</option>
+
+        </select>
+
+
+
+
+        <br>
+        <label for="#guitarType">Guitar Type</label>
+        <select id="guitarType" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+            [(ngModel)]="selectedGuitarType">
+            <option value="none">None</option>
+            <option value="1">Solid</option>
+            <option value="2">Semi-Hollow</option>
+            <option value="3">Hollow</option>
+            <option value="4">7 string</option>
+        </select>
+
+
+        <br>
+        <button mat-stroked-button color="accent" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+            (click)="OnFilter()">Filter</button>
+    </div>
+</div>
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="large" color="#fff" type="triangle-skew-spin" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<div class="container" *ngIf="fakeGuitars && fakeGuitars.length==0">
+    <hr>
+    <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"
+        mat-button>
+        <mat-icon>filter_list</mat-icon>
+    </button>
+    <app-not-found [errTitle]="'404 Not Found'"
+        [errMsg]="'We don\'t have any of those guitars. Check out the ones we have.'   " [btnText]="'PRODUCTS'"
+        [path]="'/home'">
+    </app-not-found>
+</div>
+
+<div class="container" *ngIf="fakeGuitars && fakeGuitars.length!=0">
+    <hr>
+    <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"
+        mat-button>
+        <mat-icon>filter_list</mat-icon>
+    </button>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <app-guitar-list-item *ngFor="let guitar of fakeGuitars, let i =index" [guitar]="guitar">
+            </app-guitar-list-item>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <mat-paginator class="pagginator" [length]="length" [pageSize]="5" (page)="OnPagginationEvent($event)"
+                aria-label="Select page">
+            </mat-paginator>
+        </div>
+    </div>
+
+</div>

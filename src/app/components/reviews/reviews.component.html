@@ -1,0 +1,29 @@
+<div class="spinner" *ngIf="!reviews">
+  <mat-spinner class="matspinner"></mat-spinner>
+
+</div>
+
+<div class="container">
+
+  <div *ngIf="reviews && reviews.length === 0">
+    <app-not-found [errTitle]="'404 Not Found'"
+      [errMsg]="'There are no reviews for this guitar. Think about another guitar'" [btnText]="'PRODUCTS'"
+      [path]="'/home'">
+    </app-not-found>
+  </div>
+
+
+  <h1 class="reviewHeading">Reviews</h1>
+  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+    <ngb-panel *ngFor="let review of reviews">
+      <ng-template ngbPanelTitle>
+        User: {{review.user.username}}
+        <ngb-rating [(rate)]="review.rating" (hover)="hovered=$event" (leave)="hovered=0" [readonly]="readonly"
+          class="rating"></ngb-rating>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        {{review.review}}
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</div>

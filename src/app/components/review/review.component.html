@@ -1,0 +1,20 @@
+<div class="container">
+    <h3 style="text-align: center;">User: {{user.username}} <br> Guitar: {{guitar.brand['name'] + ' '+ guitar.model + '
+        '
+        +guitar.release_year}}</h3>
+    <form class="form" [formGroup]="formGroup">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Leave a comment</mat-label>
+            <textarea matInput name="review" formControlName="review" [(ngModel)]="review" (keyup)="count()"></textarea>
+            <mat-error *ngIf="formGroup.controls['review'].invalid">You need to be under 5000 characthers and not empty!
+            </mat-error>
+        </mat-form-field>
+        <p>Characters: {{numberOfCharacters}}</p>
+        <p class="error" *ngIf="isOver">You need to be under 5000 characthers</p>
+        <br>
+        <p>
+            <ngb-rating [(rate)]="currentRate"></ngb-rating>
+        </p>
+        <button mat-raised-button color="accent" (click)="onPost()" class="post" [disabled]="isOver">Post</button>
+    </form>
+</div>

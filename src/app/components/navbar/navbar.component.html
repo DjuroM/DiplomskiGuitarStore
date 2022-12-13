@@ -1,0 +1,110 @@
+<div class="myHeader px-3 py-2 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a routerLink="" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+        <img src="../../../assets/logo2.jpg" style="height: 60px; border-radius: 10px;" alt="">
+      </a>
+
+      <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+        <li>
+          <a routerLink="" class="nav-link text-white">
+            <svg width="30" height="24" fill="currentColor" class="bi bi-house-door mx-auto mb-1" viewBox="0 0 16 16">
+              <path
+                d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z" />
+            </svg>
+            Home
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" routerLinkActive="active1" aria-current="page" routerLink="/home"
+            class="nav-link text-white">
+            <svg width="30" height="24" fill="currentColor" class="bi bi-house-door mx-auto mb-1" viewBox="0 0 16 16">
+              <path
+                d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+            </svg>
+            Products
+          </a>
+        </li>
+        <ng-container *ngIf="user">
+          <li>
+            <a class="nav-link" routerLinkActive="active1" aria-current="page" routerLink="/basket"
+              class="nav-link text-white">
+              <svg width="30" height="24" fill="currentColor" class="bi bi-cart mx-auto mb-1" viewBox="0 0 16 16">
+                <path
+                  d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+              </svg>
+              Basket
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" routerLinkActive="active1" aria-current="page" routerLink="/orders"
+              class="nav-link text-white">
+              <svg width="30" height="24" fill="currentColor" class="bi bi-mailbox mx-auto mb-1" viewBox="0 0 16 16">
+                <path
+                  d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3zm0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4zm2.646 1A3.99 3.99 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3H6.646z" />
+                <path
+                  d="M11.793 8.5H9v-1h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.354-.146l-.853-.854zM5 7c0 .552-.448 0-1 0s-1 .552-1 0a1 1 0 0 1 2 0z" />
+              </svg>
+              Orders
+            </a>
+          </li>
+
+        </ng-container>
+
+        <li>
+
+          <div class="nav-link1 text-white" style="overflow: visible;">
+            <div class="dropdown my-dropdown d-flex">
+
+              <svg data-bs-toggle="dropdown" aria-expanded="false" width="30" height="30" fill="currentColor"
+                class="bi bi-house-door mx-auto mb-1" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                <path fill-rule="evenodd"
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+              </svg>
+
+              <div class="dropdown-menu dropdown-menu">
+                <ul class="list-unstyled mb-0">
+                  <li class="nav-item" *ngIf="!user">
+                    <a class="nav-link dropdown-item d-flex align-items-center gap-2 py-2" aria-current="page"
+                      routerLink="/auth" [queryParams]="{pathBack:'orders', id:'-1'}">
+                      <span class="d-inline-block bg-success rounded-circle p-1"></span>
+                      Log in</a>
+                  </li>
+                  <div *ngIf="user">
+
+                    <li class="nav-item" routerLinkActive="active1">
+                      <a class="nav-link dropdown-item d-flex align-items-center gap-2 py-2" aria-current="page"
+                        routerLink="/logOut">
+                        <span class="d-inline-block bg-danger rounded-circle p-1"></span>
+                        Log out</a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active1">
+                      <a class="nav-link dropdown-item d-flex align-items-center gap-2 py-2" aria-current="page"
+                        routerLink="/orders">
+                        <span class="d-inline-block bg-danger rounded-circle p-1"></span>
+                        Orders</a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active1">
+                      <a class="nav-link dropdown-item d-flex align-items-center gap-2 py-2" aria-current="page"
+                        routerLink="/basket">
+                        <span class="d-inline-block bg-danger rounded-circle p-1"></span>
+                        Basket</a>
+                    </li>
+                    <li class="nav-item " routerLinkActive="active1">
+                      <a class="nav-link dropdown-item d-flex align-items-center gap-2 py-2" aria-current="page"
+                        routerLink="/userProfile">
+                        <span class="d-inline-block bg-danger rounded-circle p-1"></span>
+                        Your Profile
+                      </a>
+                    </li>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

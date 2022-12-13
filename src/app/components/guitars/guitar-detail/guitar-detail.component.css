@@ -1,0 +1,23 @@
+.container {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.card-title {
+    color: #1e1e1e;
+    text-transform: uppercase;
+    /* text-decoration: double; */
+    font-weight: bolder;
+
+
+}
+
+
+
+
+/* .card.mb-3 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+} */

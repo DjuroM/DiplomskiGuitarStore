@@ -1,0 +1,159 @@
+.col-4 {
+    padding: 0 10px;
+}
+
+img {
+    /* max-height: 300px; */
+    max-width: 100%;
+}
+
+
+
+.guitarHeading {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, SANS-SERIF;
+    letter-spacing: 7px;
+    padding: 10px 0;
+    margin-top: revert;
+}
+
+.top {
+    height: 350px;
+    width: 350px;
+    margin: auto;
+    padding: 10px 0;
+}
+
+.container {
+    background-color: white;
+}
+
+.row {
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.row.audio {
+    padding: 10px;
+    margin: 10px;
+    align-content: baseline;
+    position: relative;
+    border-bottom: 2px solid #272727;
+}
+
+.col.select {
+    padding-left: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.sampleLabel {
+    margin: 10px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: larger;
+}
+
+.sampleSelect {
+    width: 50%;
+}
+
+.col.list {
+    text-align: left;
+    padding: 5px 10px;
+}
+
+li {
+    width: fit-content;
+    margin: 0;
+    font-size: 17px;
+}
+
+ul {
+    margin: 10px 0px;
+}
+
+@counter-style thumbs {
+    system: cyclic;
+    symbols: "♪" "♫" "♩" "♬";
+    suffix: " ";
+}
+
+ul {
+    list-style: thumbs;
+}
+
+
+ol {
+    list-style: symbols(cyclic "♪" "♫" "♩" "♬");
+}
+
+.shopButton {
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0;
+    background-color: #272727;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    border: 3px solid burlywood;
+    padding: 10% 20%;
+    position: relative;
+    transition: all 1s;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+.shopButton::before {
+    content: '';
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 70%;
+    transition: 0.5s all;
+    transform: translateX(145%);
+    z-index: -1;
+
+}
+
+.shopButton:hover::before {
+    transform: translateX(0);
+}
+
+.shopButton::after {
+    content: '';
+    background-color: white;
+    position: absolute;
+    left: 70%;
+    top: 0;
+    height: 100%;
+    width: 30%;
+    transition: 0.5s all;
+    transform: translateY(-100%);
+    z-index: -1;
+
+}
+
+.shopButton:hover::after {
+    transform: translateY(0);
+}
+
+
+.shopButton:hover {
+    color: green;
+    letter-spacing: 5px;
+    font-weight: bolder;
+    border: 3px solid green;
+}
+
+
+
+.reviewRow {
+    border-top: 3px solid #272727;
+}

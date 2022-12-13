@@ -1,0 +1,64 @@
+<!-- <div class="row">
+        <h1>{{isLoginMode ? 'Login' : 'Sign Up'}}</h1>
+        <div class="col-xs-12 col-md-12">
+
+
+            <app-login [path]="path" *ngIf="isLoginMode"></app-login>
+            <app-signup [path]="path" *ngIf="!isLoginMode"></app-signup>
+
+
+            <button class="btn btn-outline-warning" (click)="onSwitchMode()" type="button">Switch to
+                {{!isLoginMode ? 'Login' : 'Sign Up'}}</button>
+
+        </div>
+    </div> -->
+
+<div class="container" #container id="container">
+    <div class="form-container sign-up-container">
+        <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+            <h1>Create Account</h1>
+            <div class="alert alert-danger" *ngIf="showError">
+                <div *ngIf="emailError!= ''">{{emailError}} <br></div>
+
+                <div *ngIf="passwordError != ''"> {{passwordError}}</div>
+                <div *ngIf="nameError != ''"> {{nameError}} <br></div>
+                <div *ngIf="surnameError != ''"> {{surnameError}} <br> </div>
+                <div *ngIf="usernameError != ''"> {{usernameError}} <br> </div>
+            </div>
+
+            <input type="text" formControlName="name" placeholder="Name" />
+            <input type="text" formControlName="surname" placeholder="Surname" />
+            <input type="text" formControlName="username" placeholder="Username" />
+            <input type="email" formControlName="email" placeholder="Email" />
+            <input type="password" formControlName="password" placeholder="Password" />
+            <button>Sign Up</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form [formGroup]="signInForm" (ngSubmit)="onSignIn()">
+            <h1>Sign in</h1>
+            <div class="alert alert-danger" *ngIf="showError">
+                <div *ngIf="emailError!= ''">{{emailError}} <br></div>
+
+                <div *ngIf="passwordError != ''"> {{passwordError}}</div>
+            </div>
+            <input type="email" formControlName="email" placeholder="Email" />
+            <input type="password" placeholder="Password" formControlName="password" />
+            <button>Sign In</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost" id="signIn" (click)="onSignInButtonClick()">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start journey with us</p>
+                <button class="ghost" id="signUp" (click)="onSignUpButtonClick()">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,175 @@
+.centerClass {
+    justify-content: center;
+}
+
+.imgBox {
+    overflow: hidden;
+}
+
+.card-img-top {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+
+}
+
+.col:hover .card-img-top {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+}
+
+/* .container {
+    background-color: bisque;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.header {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 10px;
+    background-color: cadetblue;
+    height: 200px;
+    background-image: url("https://blog.richtonemusic.co.uk/wp-content/uploads/Parallel-universe-header.jpg");
+    background-position: center center;
+    background-size: 100% 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.row.heading {
+    background-color: aliceblue;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.col.type {
+    text-align: left;
+    padding: 100px 0;
+    font-size: 2em;
+
+
+
+}
+
+.guitar-type {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.col.image {
+    text-align: center;
+    font-size: 2em;
+
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 5em;
+    letter-spacing: -2px;
+}
+
+.img-thumbnail {
+    height: 100px;
+    width: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+}
+
+.spinner {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+
+}
+
+.matspinner {
+    margin: auto;
+    vertical-align: middle;
+
+}
+
+.example-tooltip-red {
+    background: #b71c1c;
+}
+
+
+a.specialLink {
+    text-decoration: 60px;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 60px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: 3px solid black;
+    padding: 7px 28px;
+    background-color: transparent;
+    position: relative;
+    z-index: 0;
+    transition: all 0.2s;
+    color: #272727;
+    overflow: hidden;
+
+}
+
+a.specialLink::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    background-color: #272727;
+    z-index: -1;
+    /* mix-blend-mode: multiply; */
+
+/* transition: all 0.2s;
+} */
+
+/* a.specialLink::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: -50%;
+    width: 50%;
+    height: 100%;
+    background-color: #272727;
+    z-index: -1;
+    transition: all 0.2s;
+
+
+}
+
+a.specialLink:hover::before {
+    transform: translateX(100%);
+
+}
+
+a.specialLink:hover::after {
+    transform: translateX(-100%);
+
+}
+
+a.specialLink:hover {
+    color: white;
+    border-color: white;
+}
+
+h3 {
+    
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-size: 25px;
+    line-height: 60px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    color: #272727;
+} */

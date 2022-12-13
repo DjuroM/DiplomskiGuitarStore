@@ -1,0 +1,59 @@
+<div class="container" *ngIf="!user">
+    <app-not-found [errTitle]="'You are not logged in'" [errMsg]="'You Have to be logged in to see your profile'"
+        [btnText]="'LOG IN'" [path]="'/auth'">
+    </app-not-found>
+</div>
+<div class="container  shadow-lg" *ngIf="user">
+
+    <div class="row">
+        <div class="col-7">
+
+            <h1 style="text-align: left; font-size: 30px; font-weight: 600;">Welcome {{user.username}}</h1>
+
+            <form [formGroup]="formGroup" (ngSubmit)="onEdit()">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="name" id="name" class="form-control" formControlName="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="surname">Surname</label>
+                    <input type="surname" id="surname" class="form-control" formControlName="surname">
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="username" id="username" class="form-control" formControlName="username">
+                </div>
+
+                <div class="form-group" disabled>
+                    <label for="email">E-Mail</label>
+                    <input readonly type="email" id="email" class="form-control" formControlName="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" formControlName="password">
+                </div>
+
+
+                <br>
+                <div>
+                    <button class="btn btn-primary" type="submit">Edit</button>
+                    <button type="button" class="btn btn-primary" (click)="showReviews = !showReviews" btn btn-primary
+                        style="margin: 15px; margin-left: 0px;">Manage
+                        your reviews</button>
+
+                </div>
+            </form>
+        </div>
+        <div class="col-5">
+            <div *ngIf="showReviews" style="margin: 10px;">
+                <app-user-reviews [user]="user"></app-user-reviews>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>

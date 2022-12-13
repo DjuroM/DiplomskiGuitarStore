@@ -1,0 +1,28 @@
+<div *ngIf="reviews && reviews.length === 0" style="margin-bottom: 10px;">
+    <app-not-found [errTitle]="'404 Not Found'" [errMsg]="'You didn\'t leave any reviews. Go look at some guitars.'   "
+        [btnText]="'PRODUCTS'" [path]="'/home'">
+    </app-not-found>
+</div>
+
+<div class="card"  *ngFor="let review of reviews" (click)="openReview(review, content)">
+    <div class="card-body" style="cursor: pointer;">
+        <h2 class="card-title">User: {{review.user.username}}</h2>
+
+        <p class="card-text"> {{review.review}}</p>
+
+    </div>
+</div>
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Modal title</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <app-user-review-edit [user]="user" [review]="review" (postAdded)="postEvent($event)"></app-user-review-edit>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>

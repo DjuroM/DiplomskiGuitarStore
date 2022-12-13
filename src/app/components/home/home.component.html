@@ -1,0 +1,207 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="large" color="#fff" type="triangle-skew-spin" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+
+<div *ngIf="brands">
+
+
+    <main>
+
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light" style="font-size: 40px;
+                    letter-spacing: 7px;
+                    text-transform: uppercase;">Products</h1>
+                    <p class="lead text-muted">Only the best of brends</p>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="album py-5 bg-light">
+            <div class="container">
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col" routerLink="/guitars" [queryParams]="{type: 'brand', id : 13}">
+                        <div class="card shadow-sm">
+                            <div class="imgBox">
+
+                                <img class="bd-placeholder-img card-img-top" src="../../../assets/gibsons.jpg"
+                                    width="100%" height="325" alt="">
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">These models deliver the quality, features, and sound you expect
+                                    from Gibson.
+                                    Play different. Stand out.
+                                </p>
+                                <div class="d-flex justify-content-center align-items-center ">
+                                    <h2>Gibson</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" routerLink="/guitars" [queryParams]="{type: 'brand', id : 1}">
+                        <div class="card shadow-sm">
+                            <div class="imgBox">
+
+                                <img class="bd-placeholder-img card-img-top" src="../../../assets/fenders.jpg"
+                                    width="100%" height="325" alt="">
+
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Everyone from beginners to the world’s most acclaimed
+                                    artists and performers have used Fender instruments</p>
+                                <div class="d-flex justify-content-center align-items-center ">
+                                    <h2>Fender</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" routerLink="/guitars" [queryParams]="{type: 'brand', id : 9}">
+                        <div class="card shadow-sm">
+                            <div class="imgBox">
+
+                                <img class="bd-placeholder-img card-img-top" src="../../../assets/prsPr.jpg"
+                                    width="100%" height="325" alt="">
+                            </div>
+
+                            <div class="card-body">
+                                <p class="card-text">We strive to build the best guitars possible
+                                    and to serve our customers and community with distinction.</p>
+                                <div class="d-flex justify-content-center align-items-center ">
+                                    <h2>PRS</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col" routerLink="/guitars" [queryParams]="{type: 'brand', id : '3'}">
+                        <div class="card shadow-sm">
+                            <div class="imgBox">
+
+                                <img class="bd-placeholder-img card-img-top" src="../../../assets/ibanezPr.jpg"
+                                    width="100%" height="325" alt="">
+
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">The richness of sound, appearance and unrivalled
+                                    playability of the Ibanez guitars will
+                                    open your reservoir of inspiration.</p>
+                                <div class="d-flex justify-content-center align-items-center ">
+                                    <h2>Ibanez</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" routerLink="/guitars" [queryParams]="{type: 'brand', id : 12}">
+                        <div class="card shadow-sm">
+                            <div class="imgBox">
+
+                                <img class="bd-placeholder-img card-img-top" src="../../../assets/squires.jpg"
+                                    width="100%" height="325" alt="">
+
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Squier electric guitars offer iconic Fender designs at affordable
+                                    prices.</p>
+                                <div class="d-flex justify-content-center align-items-center ">
+                                    <h2>Squire</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col" routerLink="/guitars" [queryParams]="{type: 'brand', id : 10}">
+                        <div class="card shadow-sm">
+                            <div class="imgBox">
+                                <img class="bd-placeholder-img card-img-top" src="../../../assets/epiphones.jpg"
+                                    width="100%" height="325" alt="">
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">From your first guitar to your treasured road warrior, Epiphone
+                                    crafts high-quality instruments musicians can rely on.</p>
+                                <div class="d-flex justify-content-center align-items-center ">
+                                    <h2>Epiphone</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="justify-content: center;">
+                    <div class="col" routerLink="/guitars" [queryParams]="{type: 'guitarType', id : '1'}">
+                        <div class="card shadow-sm">
+                            <div class="imgBox">
+                                <img class="bd-placeholder-img card-img-top" src="../../../assets/solidBodyGuitar.jpg"
+                                    width="100%" height="325" alt="">
+                            </div>
+
+                            <div class="card-body">
+
+                                <div class="d-flex justify-content-center align-items-center ">
+                                    <h2>Solid Body Guitars</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" routerLink="/guitars" [queryParams]="{type: 'guitarType', id : '2'}">
+                        <div class="card shadow-sm">
+                            <div class="imgBox">
+                                <img class="bd-placeholder-img card-img-top"
+                                    src="../../../assets/SemiHollowBodyGuitar.jpg" width="100%" height="325" alt="">
+                            </div>
+
+                            <div class="card-body">
+
+                                <div class="d-flex justify-content-center align-items-center ">
+                                    <h2>Semi-Hollow Guitars</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="justify-content: center;">
+                    <div class="col" routerLink="/guitars" [queryParams]="{type: 'guitarType', id : '4'}">
+                        <div class="card shadow-sm">
+                            <div class="imgBox">
+                                <img class="bd-placeholder-img card-img-top" src="../../../assets/7string.jpg"
+                                    width="100%" height="325" alt="">
+                            </div>
+
+                            <div class="card-body">
+
+                                <div class="d-flex justify-content-center align-items-center ">
+                                    <h2>7 String Guitars</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" routerLink="/guitars" [queryParams]="{type: 'guitarType', id : '3'}">
+                        <div class="card shadow-sm">
+                            <div class="imgBox">
+
+                                <img class="bd-placeholder-img card-img-top" src="../../../assets/HollowBody.jpg"
+                                    width="100%" height="325" alt="">
+                            </div>
+                            <div class="card-body">
+
+                                <div class="d-flex justify-content-center align-items-center ">
+                                    <h2>Hollow-Body Guitars</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+</div>

@@ -1,0 +1,15 @@
+.container {
+
+    width: 30%;
+    margin-top: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid;
+    border-left-color: cornsilk;
+    border-right-color: cornsilk;
+    border-radius: 20px;
+    padding: 15px;
+    background-color: white;
+
+}

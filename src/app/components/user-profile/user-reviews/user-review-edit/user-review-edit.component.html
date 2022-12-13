@@ -1,0 +1,17 @@
+<div class="container" *ngIf="review">
+    <form class="form" [formGroup]="formGroup">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Leave a comment</mat-label>
+            <textarea matInput class="textarea" name="review" formControlName="review" [(ngModel)]="reviewText"
+                (keyup)="count()"></textarea>
+            <mat-error *ngIf="formGroup.controls['review'].invalid">You need to be under 5000 characthers and not empty!
+            </mat-error>
+        </mat-form-field>
+        <p style="margin: 15px;">Characters: {{numberOfCharacters}}</p>
+        <p class="error" *ngIf="isOver">You need to be under 5000 characthers</p>
+        <br>
+        <button mat-raised-button color="accent" (click)="onPost()" class="post" [disabled]="isOver">Post</button>
+        <button mat-raised-button color="accent" type="button" (click)="onDelete(review.id!)" class="post"
+            [disabled]="isOver">Delete</button>
+    </form>
+</div>

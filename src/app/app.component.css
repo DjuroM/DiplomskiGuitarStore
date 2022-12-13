@@ -1,0 +1,8 @@
+.myHeight {
+
+    margin-bottom: 30px;
+
+    min-height: calc(100vh - 220px);
+    position: relative;
+
+}

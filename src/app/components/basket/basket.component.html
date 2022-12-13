@@ -1,0 +1,138 @@
+<div *ngIf="!user">
+    <app-not-found [errTitle]="'You are not logged in'" [errMsg]="'You Have to be logged in to see your basket'"
+        [btnText]="'LOG IN'" [path]="'/auth'">
+    </app-not-found>
+</div>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="large" color="#fff" type="triangle-skew-spin" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+<main class="page" *ngIf="user && baskets">
+    <div class="container" style="background-color: whitesmoke;" *ngIf="baskets && baskets.length === 0 ">
+        <app-empty-basket></app-empty-basket>
+    </div>
+    <section *ngIf="baskets && baskets.length !== 0 " class="shopping-cart dark">
+
+        <div class="container">
+            <div class="block-heading">
+                <h2>Shopping Cart</h2>
+                <p>Confirm your orders and procede to checkout.</p>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12 col-lg-8">
+                        <div class="items">
+                            <div class="product" *ngFor="let basket of baskets">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img class="img-fluid mx-auto d-block image" [src]="basket.guitar.image">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="info">
+                                            <div class="row">
+                                                <div class="col-md-5 product-name">
+                                                    <div class="product-name">
+                                                        <a [routerLink]="['/guitarItem/' + basket.guitar.id]">{{basket.guitar.brand['name']
+                                                            + ' '+
+                                                            basket.guitar.model}}</a>
+                                                        <div class="product-info">
+                                                            <div>Release year: <span
+                                                                    class="value">{{basket.guitar.release_year}}</span>
+                                                            </div>
+                                                            <div>Guitar type: <span
+                                                                    class="value">{{basket.guitar.guitar_type.type}}</span>
+                                                            </div>
+                                                            <div>Pickups: <span
+                                                                    class="value">{{basket.guitar.pickups.pickup_combination}}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 quantity">
+                                                    <button (click)="onDelete(basket.id!)" style="margin:10px 0px"
+                                                        class="btn btn-outline-danger">Delete</button>
+                                                </div>
+                                                <div class="col-md-3 price">
+                                                    <span>{{basket.guitar.price}} &euro;</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <div class="summary">
+                            <h3>Summary</h3>
+                            <div class="summary-item"><span class="text">Subtotal</span><span class="price">
+                                    &euro;{{totalPrice}}</span>
+                            </div>
+                            <div class="summary-item"><span class="text">Discount</span><span
+                                    class="price">&euro;0</span>
+                            </div>
+                            <div class="summary-item"><span class="text">Shipping</span><span
+                                    class="price">&euro;0</span>
+                            </div>
+                            <div class="summary-item"><span class="text">Total</span><span
+                                    class="price">&euro;{{totalPrice}}</span>
+                            </div>
+                            <button type="button" (click)="chechkOut()"
+                                class="btn btn-primary btn-lg btn-block">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+</main>
+<!-- 
+<div class="container" *ngIf="user && baskets">
+
+    <div *ngIf="baskets && baskets.length === 0 ">
+        <h2 style="text-align: center;">Your basket is empty</h2>
+    </div>
+
+
+    <div class="list-group w-auto">
+        <div class="row">
+            <h1>Your shopping cart</h1>
+            <div class="col-7">
+
+                <div class="row" *ngFor="let basket of baskets">
+
+                    <div class="myListItem list-group-item d-flex gap-3 py-3" aria-current="true">
+                        <img src="{{basket.guitar.image}}" alt="twbs" width="100" height="100"
+                            class="rounded mx-auto d-block">
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                            <div>
+                                <h3 class="mb-0">{{ basket.guitar.model + ' ' + basket.guitar.release_year}}</h3>
+                                <p class="mb-0 opacity-100">{{basket.guitar.description}}</p>
+                                <p>
+                                    <button (click)="onDelete(basket.id!)" style="margin:10px 0px"
+                                        class="btn btn-outline-danger">Delete</button>
+                                </p>
+                            </div>
+                            <small class="opacity-100 text-nowrap"
+                                style="padding: 60px 0;font-size: 18px;">{{basket.guitar.price}}&euro;</small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-5 checkoutCol">
+
+                <div class="checkoutDiv" *ngIf="baskets && baskets.length !== 0 ">
+                    <h2 class="checkoutHeading">CheckOut</h2>
+                    <br>
+                    <h4 style="font-size: 20px;">TOTAL {{totalPrice}}&euro; </h4>
+                    <br>
+                    <a (click)="chechkOut()" class="checkoutBtn">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+
+</div> .. -->

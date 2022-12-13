@@ -1,0 +1,128 @@
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide *ngFor="let image of images">
+    <div class="">
+      <!-- src="../../../assets/electric-guitar-004.jpg" -->
+      <img style="width: 100%; height: 800px;" [src]="image" alt="Random first slide" />
+    </div>
+    <div class="carousel-caption">
+      <h2>Start your guitar journey</h2>
+      <p>Let us help you find the perfect guitar for you</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+
+<div class="container">
+
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5 shadow-lg">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="../../../assets/fender.jpg" class="d-block mx-lg-auto img-fluid myImg" alt="Bootstrap Themes"
+        width="700" height="500" loading="lazy">
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold lh-1 mb-3">Fender - all things rock ‘n’ roll</h1>
+      <p class="lead"> Fender Musical Instruments Corporation (FMIC) is the world’s leading guitar manufacturer, and its
+        name has become synonymous with all things rock ‘n’ roll.
+        Fender has touched and transformed music worldwide and in nearly every genre: rock ‘n’ roll,
+        country and western, jazz, rhythm and blues, and many others</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <button type="button" routerLink="/guitars" [queryParams]="{type: 'brand', id : 1}"
+          class="btn btn-primary btn-lg px-4 me-md-2">See more!</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5 shadow-lg">
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold lh-1 mb-3">Gibson - Play different. Stand out.</h1>
+      <p class="lead">Play different. Stand out. Gibson USA has produced many signature models for the Artist
+        Collection, including guitars created
+        in collaboration with Slash, Dave Mustaine, Lzzy Hale, Kirk Douglas, and Tony Iommi</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <button type="button" routerLink="/guitars" [queryParams]="{type: 'brand', id : 13}"
+          class="btn btn-primary btn-lg px-4 me-md-2">See more!</button>
+      </div>
+    </div>
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="../../../assets/gibson.jpg" class="d-block mx-lg-auto img-fluid myImg" alt="Bootstrap Themes"
+        width="700" height="500" loading="lazy">
+    </div>
+  </div>
+
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5 shadow-lg">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="../../../assets/prs.jpg" class="d-block mx-lg-auto img-fluid myImg" alt="Bootstrap Themes" width="700"
+        height="500" loading="lazy">
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold lh-1 mb-3">PRS - Paul Reed Smith</h1>
+      <p class="lead">Guitar building is an ongoing process of discovery. We are devoted to the guitar's rich heritage
+        while committed to new technologies that will enrich our products with uncompromised tone, playability and
+        beauty. Our success depends on our ability to listen, implement positive change and continually refine our
+        craft.</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <button type="button" routerLink="/guitars" [queryParams]="{type: 'brand', id : 9}"
+          class="btn btn-primary btn-lg px-4 me-md-2">See more!</button>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5 shadow-lg">
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold lh-1 mb-3">Ibanez</h1>
+      <p class="lead">"Designed to Inspire", all Ibanez guitars series are manufactured with select tone woods,
+        high-profile electronics, hardware and dedicated skills of craftsmanship and care in details for your musical
+        journey. The richness of sound, stunning appearance and unrivalled playability of the Ibanez guitars series will
+        open the gate of your reservoir of inspiration.</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <button type="button" routerLink="/guitars" [queryParams]="{type: 'brand', id : 4}"
+          class="btn btn-primary btn-lg px-4 me-md-2">See more!</button>
+
+      </div>
+    </div>
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="../../../assets/ibanez.jpg" class="d-block mx-lg-auto img-fluid myImg" alt="Bootstrap Themes"
+        width="700" height="500" loading="lazy">
+    </div>
+  </div>
+
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5 shadow-lg">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="../../../assets/Gibson-ES335-1@2160x1441.jpg" class="d-block mx-lg-auto img-fluid myImg"
+        alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold lh-1 mb-3">Epiphone - Inspired by Gibson</h1>
+      <p class="lead">A line of iconic electric guitars designed from the original Gibson blueprints.
+        Exceptional, all-American craftsmanship and a legacy as rich as music itself in every note you play
+      </p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <button type="button" routerLink="/guitars" [queryParams]="{type: 'brand', id : 10}"
+          class="btn btn-primary btn-lg px-4 me-md-2">See more!</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5 shadow-lg">
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold lh-1 mb-3">Squier</h1>
+      <p class="lead">Squier electric guitars offer iconic Fender designs at affordable prices. The Stratocaster,
+        Telecaster, Jaguar, Jazzmaster, and Mustang are all available from Squier, along with innovative new models. The
+        Bullet and Affinity series are perfect for beginners, while the Classic Vibe is for vintage enthusiasts. The
+        Contemporary series features modern upgrades, while the Paranormal presents extraordinary models.
+      </p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <button type="button" routerLink="/guitars" [queryParams]="{type: 'brand', id : 12}"
+          class="btn btn-primary btn-lg px-4 me-md-2">See more!</button>
+      </div>
+    </div>
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="../../../assets/squire.jpg" class="d-block mx-lg-auto img-fluid myImg" alt="Bootstrap Themes"
+        width="700" height="500" loading="lazy">
+    </div>
+  </div>
+
+
+</div>

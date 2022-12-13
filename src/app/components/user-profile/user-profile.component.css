@@ -1,0 +1,11 @@
+.container {
+    background-color: white;
+    margin-top: 35px;
+    padding: 10px 20px;
+    border-radius: 20px;
+
+}
+
+.btn {
+    margin: 5px;
+}

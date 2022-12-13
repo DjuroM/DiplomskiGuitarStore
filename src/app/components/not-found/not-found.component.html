@@ -1,0 +1,25 @@
+<div class="myContainer">
+
+    <header>
+        <div class="head-text">
+            <p>{{errTitle}}</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-wrapper">
+            <picture class="scarecrow-img">
+                <img src="../../../assets/Scarecrow.png" alt="scarecrow">
+            </picture>
+            <div class="error-text">
+                <h2>I have bad news for you</h2>
+                <p>{{errMsg}}</p>
+                <span class="input-group-btn">
+                    <button [routerLink]="path" class="btn" type="button">{{btnText}}</button>
+
+                </span>
+            </div>
+        </div>
+
+    </main>
+</div>

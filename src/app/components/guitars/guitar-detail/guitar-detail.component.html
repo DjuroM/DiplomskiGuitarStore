@@ -1,0 +1,39 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="large" color="#fff" type="triangle-skew-spin" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+
+<div class="container">
+    <hr>
+
+    <div *ngIf="guitar" class="card mb-3" style="max-width: 540px; box-shadow:0px 5px 11px 1px whitesmoke;">
+
+        <div class="row">
+            <div class="col" style="justify-content: center;">
+                <img src="{{guitar.image}}" alt="..." style="width: 200px; height: 200px; display:block; margin: auto;">
+            </div>
+            <div class="row">
+
+                <div class="col">
+                    <div class="card-body">
+                        <h2 class="card-title">{{guitar.brand['name'] + ' '+ guitar.model + ' ' +guitar.release_year}}
+                        </h2>
+                        <p class="card-text">{{guitar.description}}</p>
+                        <p class="card-text-price"> <small class="text-muted"><b>Price: {{guitar.price}}
+                                    &euro;</b></small>
+                        </p>
+                        <p>Guitar type: {{guitar.guitar_type['type']}}</p>
+                        <p>Pickups combination: <b> {{guitar.pickups['pickup_combination']}} </b></p>
+                        <p>Pickups: {{guitar.pickups['pickup_description']}}</p>
+                        <p><button mat-raised-button color="primary" (click)="OnAddToBasket()">Add to
+                                basket</button> | <button mat-raised-button (click)="OnSeeMore()">See More</button>
+                        </p>
+                        <!-- <p><button mat-raised-button (click)="OnSeeMore()">See More</button></p> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

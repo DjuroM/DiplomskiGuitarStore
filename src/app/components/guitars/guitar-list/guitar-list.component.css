@@ -1,0 +1,26 @@
+.pagginator {
+    background-color: beige;
+    color: black;
+
+}
+
+#selectSort {
+    /* margin: 0 auto; */
+    justify-content: center;
+    text-align: center;
+
+}
+
+
+
+.nothing {
+    height: 400px;
+    width: 200px;
+}
+
+/* .mat-drawer {
+    position: relative;
+    left: 0;
+    height: 100%;
+    
+} */
